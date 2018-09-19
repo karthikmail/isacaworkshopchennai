@@ -19,7 +19,34 @@ under the License.
 
 // ====CHAINCODE EXECUTION SAMPLES (CLI) ==================
 
-// === Initiate marbles ===
+/*
+
+Terminal 1:
+
+cd chaincode-docker-devmode
+
+docker-compose -f docker-compose-simple.yaml up
+
+
+Terminal 2:
+
+docker exec -it chaincode bash
+
+
+cd isaca
+go build
+
+
+CORE_PEER_ADDRESS=peer:7052 CORE_CHAINCODE_ID_NAME=mycc:0 ./isaca
+
+
+Terminal 3:
+
+docker exec -it cli bash
+
+peer chaincode install -p chaincodedev/chaincode/isaca -n mycc -v 0
+
+peer chaincode instantiate -n mycc -v 0 -c '{"Args":["a","10"]}' -C myc
 
 
 // ==== Invoke marbles ====
@@ -31,6 +58,7 @@ under the License.
 // ==== Query marbles ====
 // peer chaincode query -C myc -n mycc -c '{"Args":["readMarble","marble1"]}'
 
+*/
 
 
 package main
